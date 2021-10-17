@@ -1,5 +1,5 @@
 def arithmetic_arranger(problems):
-
+    
     largo = len(problems)
     arranged_problems = [""] * largo
     
@@ -35,14 +35,23 @@ def arithmetic_arranger(problems):
         line2 = line2 + ope + " " * (largoCuenta-len(num2)-1) + num2 + " " * 4
         line3 = line3 + "-" * (largoCuenta) + " " * 4
 
-        
-        result = int(num1)+int(num2)
+        if(ope =='-'):
+            result = int(num1) - int(num2)
+        elif(ope=="+"):
+            result = int(num1) + int(num2)
         long = len(str(result))
         line4 = line4 + " " * (largoCuenta-long) + str(result) +  " " * 4
 
     
+    line1 = line1.rstrip()
+    line2 = line2.rstrip()
+    line3 = line3.rstrip()
+    line4 = line4.rstrip()
+        
     
     if(displayResults):
-        print(line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 )
+         arranged_problems = line1 + "\n" + line2 + "\n" + line3 + "\n" + line4
     else:
-            print(line1 + "\n" + line2 + "\n" + line3)    
+         arranged_problems = line1 + "\n" + line2 + "\n" + line3
+
+    return arranged_problems
