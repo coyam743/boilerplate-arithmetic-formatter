@@ -1,4 +1,4 @@
-def arithmetic_arranger(problems):
+def arithmetic_arranger(problems, displayResults = False):
     
     largo = len(problems)
     arranged_problems = [""] * largo
